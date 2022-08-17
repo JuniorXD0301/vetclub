@@ -1,0 +1,33 @@
+<div class="espacio">
+<div class="container">
+  <div class="row espacio2">
+    <div class="card card1">
+      <div class="card-body">
+        <table class="table table-striped center1">
+          <thead>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Nickname</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+          </thead>
+          <tbody>
+            
+            <tr *ngFor="let us of usuario">
+              <td>{{ us.id_usuario }}</td>
+              <td>{{ us.nombre }}</td>
+              <td>{{ us.correo }}</td>
+              <td>{{ us.telefono }}</td>
+              <td>{{ us.nickname }}</td>
+              <!--<td><a (click)="editarUsuario(user.id)" class="btn btn-warning">Editar</a></td>-->
+              <td><button (click)="eliminarUser(us.id_usuario)" class="btn btn-danger">Borrar</button></td>              
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit" (click)='nuevoUsuario()' class="btn btn-success salto">Nuevo Usuario</button>
+      </div>
+    </div>
+  </div>
+</div>
