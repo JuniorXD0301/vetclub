@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MascotaComponent } from './todo_mascota/mascota/mascota.component'
 import { ListarMascotasComponent } from './todo_mascota/listar-mascotas/listar-mascotas.component';
 import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
+import { ListarProfesionalComponent } from './profesional/listar-profesional/listar-profesional.component';
+import { CrearProfesionalComponent } from './profesional/crear-profesional/crear-profesional.component';
 
 //para que funcionen los componentes de rutas
 const routes: Routes = [
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'usuarios/usuario',
     component: CrearUsuarioComponent
+  },
+  {
+    path: 'profesionales',
+    component: ListarProfesionalComponent
+  },
+  {
+    path: 'profesionales/profesional',
+    component: CrearProfesionalComponent
   }
 
 ];

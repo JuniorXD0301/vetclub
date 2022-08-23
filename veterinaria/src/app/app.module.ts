@@ -9,6 +9,8 @@ import { MascotaComponent } from './todo_mascota/mascota/mascota.component';
 import { ListarMascotasComponent } from './todo_mascota/listar-mascotas/listar-mascotas.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
 import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
+import { CrearProfesionalComponent } from './profesional/crear-profesional/crear-profesional.component';
+import { ListarProfesionalComponent } from './profesional/listar-profesional/listar-profesional.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
     MascotaComponent,
     ListarMascotasComponent,
     CrearUsuarioComponent,
-    ListarUsuarioComponent
+    ListarUsuarioComponent,
+    CrearProfesionalComponent,
+    ListarProfesionalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+<div class="espacio">
+<div class="container">
+  <div class="row espacio2">
+    <div class="card card1">
+      <div class="card-body">
+        <table class="table table-striped center1">
+          <thead>
+            <th>#</th>
+            <th>Tipo Profesional</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Nickname</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+          </thead>
+          <tbody>
+            
+            <tr *ngFor="let pro of profesional">
+              <td>{{ pro.id_profesional }}</td>
+              <td>{{ pro.tipo_profesional }}</td>
+              <td>{{ pro.nombre }}</td>
+              <td>{{ pro.correo }}</td>
+              <td>{{ pro.nickname }}</td>
+              <!--<td><a (click)="editarUsuario(user.id)" class="btn btn-warning">Editar</a></td>-->
+              <td><button (click)="eliminarPro(pro.id_profesional)" class="btn btn-danger">Borrar</button></td>              
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit" (click)='nuevoProfesional()' class="btn btn-success salto">Nuevo Profesional</button>
+      </div>
+    </div>
+  </div>
+</div>

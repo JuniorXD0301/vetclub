@@ -170,6 +170,16 @@ usuarioSchema = UsuarioSchema()
 #instancia multiples datos
 usuarioMultipleSchema = UsuarioSchema(many = True)
 
+#creacion de esquema, para profesional
+class ProfesionalSchema(ma.Schema):
+    class Meta:
+        fields = ('id_profesional', 'tipo_profesional', 'nombre', 'correo', 'nickname')
+#instanciar esquema
+profesionalSchema = ProfesionalSchema()
+#multiples datos o respuestas apartir de la bd
+profesionalMultipleSchema = ProfesionalSchema(many = True)
+
+
 #Endpoints de rest-api, Apartado de Mascotas
 #crear una mascota
 @app.route('/mascota', methods=['POST'])
@@ -341,6 +351,71 @@ def borrarUser(id_usuario):
     
     return usuarioSchema.jsonify(delUser)
 
+#Endpoints de rest-api, Apartado de Profesional
+#crear una profesional
+@app.route('/profesional', methods=['POST'])
+def addPro():
+    #recibo y guardo los datos
+    tipo_profesional = request.json['tipo_profesional']
+    nombre = request.json['nombre']
+    correo = request.json['correo']
+    nickname = request.json['nickname']
+    #creo al profesional
+    new_profesional = profesional(tipo_profesional, nombre, correo, nickname)
+    #guardo en bd
+    db.session.add(new_profesional)
+    print(new_profesional)
+    db.session.commit()
+    #respondemos con la info de creacion, de 1 sola tarea
+    return profesionalSchema.jsonify(new_profesional)
+
+#get profesionales
+@app.route('/profesional', methods=['GET'])
+def get_pro():
+    #consultar todo del modelo de mascota especifica
+    profesionales = profesional.query.all()
+    #metodo dump para pasar datos de la consulta
+    pro = profesionalMultipleSchema.dump(profesionales)
+    return jsonify(pro)
+
+#get profesional
+@app.route('/profesional/<id_profesional>', methods=['GET'])
+def get_proById(id_profesional):
+    proById = profesional.query.get(id_profesional)
+    return profesionalSchema.jsonify(proById)
+
+#actualizar profesional
+@app.route('/profesional/<id_profesional>', methods=['PUT'])
+def actualizarPro(id_profesional):
+    actualizar = profesional.query.get(id_profesional)
+    tipo_profesional = request.json['tipo_profesional']
+    nombre = request.json['nombre']
+    correo = request.json['correo']
+    nickname = request.json['nickname']
+    #update entre variables definidas a los datos
+    actualizar.tipo_profesional = tipo_profesional
+    actualizar.nombre = nombre
+    actualizar.correo = correo
+    actualizar.nickname = nickname
+    #update bd
+    db.session.commit()
+    #mostrar el update al usuario
+    return profesionalSchema.jsonify(actualizar)
+    
+#eliminar profesional
+@app.route('/profesional/<id_profesional>', methods=['DELETE'])
+def borrarPro(id_profesional):
+    delPro = profesional.query.get(id_profesional)
+    #borrar en bd
+    db.session.delete(delPro)
+    #update bd
+    db.session.commit()
+    
+    return profesionalSchema.jsonify(delPro)
+
+#Endpoints de rest-api, Apartado tipo Profesional
+"""Este lo escribi directamente en sql"""
+
 #inicializacion del programa app
 if __name__ == "__main__":
     app.run(debug=True)
@@ -352,4 +427,8 @@ if __name__ == "__main__":
 #   db.session.add(new_tipo)
 #   print(new_tipo)
 #   db.session.commit()
+
+#insert into tipo_profesional values
+#(NULL,"Secretario","Encargado de la agenda, citas, inventario")
+
     
