@@ -10,11 +10,11 @@ import { CrearProfesionalComponent } from './profesional/crear-profesional/crear
 //para que funcionen los componentes de rutas
 const routes: Routes = [
   {
-    path: '',
+    path: 'mascota',
     component: ListarMascotasComponent
   },
   {
-    path: 'mascota',
+    path: '',
     component: MascotaComponent
   },
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
     component: ListarUsuarioComponent
   },
   {
-    path: 'usuarios/usuario',
+    path: 'usuarios/crearusuario',
     component: CrearUsuarioComponent
   },
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponenetes = 
+export const routingComponenetes =
 {
   ListarMascotasComponent,
   MascotaComponent,

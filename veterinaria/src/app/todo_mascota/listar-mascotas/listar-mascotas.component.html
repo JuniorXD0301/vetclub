@@ -1,33 +1,47 @@
 <div class="espacio">
-<div class="container">
-  <div class="row espacio2">
-    <div class="card card1">
-      <div class="card-body">
-        <table class="table table-striped center1">
-          <thead>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Tipo de animal</th>
-            <th>Raza</th>
-            <th>Historial</th>
-            <th>Editar</th>
-            <th>Borrar</th>
-          </thead>
-          <tbody>
-            
-            <tr *ngFor="let mas of mascotas">
-              <td>{{ mas.id_mascota }}</td>
-              <td>{{ mas.nombre }}</td>
-              <td>{{ mas.tipo_mascota }}</td>
-              <td>{{ mas.raza }}</td>
-              <td>{{ mas.historial }}</td>
-              <!--<td><a (click)="editarUsuario(user.id)" class="btn btn-warning">Editar</a></td>-->
-              <td><button (click)="eliminar(mas.id_mascota)" class="btn btn-danger">Borrar</button></td>
-              
-            </tr>
-          </tbody>
-        </table>
-        <button type="submit" (click)='nuevaMascota()' class="btn btn-success salto">Nueva Mascota</button>
+  <div class="container">
+    <div class="row">
+      <div class="card card1">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo de animal</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Historial</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Borrar</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let mas of mascotas">
+                  <td>{{ mas.id_mascota }}</td>
+                  <td>{{ mas.nombre }}</td>
+                  <td>{{ mas.tipo_mascota }}</td>
+                  <td>{{ mas.raza }}</td>
+                  <td>{{ mas.historial }}</td>
+                  <td><button class="btn btn-success">Editar</button></td>
+                  <td>
+                    <button
+                      (click)="eliminar(mas.id_mascota)"
+                      class="btn btn-danger"
+                    >
+                      Borrar
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button
+            type="submit"
+            (click)="nuevaMascota()"
+            class="btn btn-success salto"
+          >
+            Nueva Mascota
+          </button>
+        </div>
       </div>
     </div>
   </div>

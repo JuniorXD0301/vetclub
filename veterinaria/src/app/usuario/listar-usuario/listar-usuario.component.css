@@ -7,16 +7,10 @@
 }
 
 .espacio{
+  display: flex;
     padding-top: 60px;
     padding-right: 250px;
     margin: auto;
-}
-
-.espacio2{
-    width: 1520px;
-    margin: auto;
-    padding: auto;
-    padding-bottom: 15px;
 }
 
 .container{
@@ -27,6 +21,7 @@
 .card1{
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
 table{

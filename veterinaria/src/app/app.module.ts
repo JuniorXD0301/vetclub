@@ -11,6 +11,7 @@ import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.com
 import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
 import { CrearProfesionalComponent } from './profesional/crear-profesional/crear-profesional.component';
 import { ListarProfesionalComponent } from './profesional/listar-profesional/listar-profesional.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ListarProfesionalComponent } from './profesional/listar-profesional/lis
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

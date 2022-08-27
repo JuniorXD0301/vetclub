@@ -14,15 +14,15 @@
             <th>Borrar</th>
           </thead>
           <tbody>
-            
+
             <tr *ngFor="let us of usuario">
               <td>{{ us.id_usuario }}</td>
               <td>{{ us.nombre }}</td>
               <td>{{ us.correo }}</td>
               <td>{{ us.telefono }}</td>
               <td>{{ us.nickname }}</td>
-              <!--<td><a (click)="editarUsuario(user.id)" class="btn btn-warning">Editar</a></td>-->
-              <td><button (click)="eliminarUser(us.id_usuario)" class="btn btn-danger">Borrar</button></td>              
+              <td><button class="btn btn-success">Editar</button></td>
+              <td><button (click)="eliminarUser(us.id_usuario)" class="btn btn-danger">Borrar</button></td>
             </tr>
           </tbody>
         </table>

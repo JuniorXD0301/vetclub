@@ -1,31 +1,43 @@
-*{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.form-label {
+  font-size: 15px;
+}
+.card {
+  display: flex;
+  width: 100%;
+}
+#imagen {
+  display: flex;
+}
+.espacio {
+  width: 100%;
+  margin: auto;
+  padding: auto;
+  padding-bottom: 15px;
 }
 
-.espacio2{
-    width: 1520px;
-    margin: auto;
-    padding: auto;
-    padding-bottom: 15px;
+.estilo {
+  font-size: 40px;
+  text-align: center;
+}
+button {
+  display: inline-block;
 }
 
-.estilo{
-    font-size: 40px;
-    text-align: center;
-}
-button{
-    display: inline-block;
+.cambio {
+  width: 500px;
 }
 
-.cambio{
-    width: 500px;
+.estilos {
+  text-align: center;
 }
 
-.estilos{
-    text-align: center;
+button {
+  margin-left: 10px;
 }
-
-button{
-    margin-left: 10px;
+#back {
+  float: right;
 }
