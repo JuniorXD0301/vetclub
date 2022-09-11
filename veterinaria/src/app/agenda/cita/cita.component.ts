@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Cita } from 'src/app/models/cita';
 import { CitaService } from 'src/app/services/cita.service';
 @Component({
@@ -9,6 +10,8 @@ import { CitaService } from 'src/app/services/cita.service';
   styleUrls: ['./cita.component.css']
 })
 export class CitaComponent implements OnInit {
+
+  model!: NgbDateStruct;
 
   constructor(private router: Router, private form:FormsModule, private cita:CitaService) { }
 

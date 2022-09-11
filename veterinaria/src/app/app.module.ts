@@ -22,6 +22,7 @@ import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.
 import { EditarProfesionalComponent } from './profesional/editar-profesional/editar-profesional.component';
 import { EditarMascotaComponent } from './todo_mascota/editar-mascota/editar-mascota.component';
 import { EditarProgramadaComponent } from './agenda/editar-programada/editar-programada.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { EditarProgramadaComponent } from './agenda/editar-programada/editar-pro
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

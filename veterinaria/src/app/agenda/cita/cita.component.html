@@ -94,13 +94,19 @@
                   />
                 </div>
 
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                   <label for="fecha" class="form-label">Fecha</label>
                   <div class="input-group date" data-provide="datepicker">
                     <input type="text" class="form-control" placeholder="AAAA-MM-DD" formControlName="fecha">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
+                  </div>
+                </div> -->
+                <div class="col-md-4">
+                  <input class="form-control" placeholder="AAAA-MMM-DD" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
                   </div>
                 </div>
 

@@ -18,8 +18,10 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "moment": "^2.29.4",
     "rxjs": "~6.6.0",
+    "simplescrollup": "^1.1.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

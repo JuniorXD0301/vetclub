@@ -6,38 +6,44 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
 })
 export class IndexComponent implements OnInit {
+  profesional: Profesional[] = [];
 
-  profesional : Profesional[] = [];
-
-  constructor(private profesionalService: ProfesionalService, private router: Router) { }
+  constructor(
+    private profesionalService: ProfesionalService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.cargarProfesional()
+    this.cargarProfesional();
   }
 
-  cargarProfesional(){
-    this.profesionalService.obtenerProfesional().subscribe(datos=> {
-      this.profesional = datos
-      console.log(this.profesional)
-    })
+  scrollWin() {
+    window.scrollTo(0, 100);
   }
 
-  veterinario(){
-    this.router.navigate(['programadas/cita'])
+  cargarProfesional() {
+    this.profesionalService.obtenerProfesional().subscribe((datos) => {
+      this.profesional = datos;
+      console.log(this.profesional);
+    });
   }
 
-  estilismo(){
-    this.router.navigate(['programadas/style'])
+  veterinario() {
+    this.router.navigate(['programadas/cita']);
   }
 
-  admin(){
-    this.router.navigate(['admin'])
+  estilismo() {
+    this.router.navigate(['programadas/style']);
   }
 
-  tienda(){
-    this.router.navigate(['tienda'])
+  admin() {
+    this.router.navigate(['admin']);
+  }
+
+  tienda() {
+    this.router.navigate(['tienda']);
   }
 }
