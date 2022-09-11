@@ -1,87 +1,93 @@
-<div class="espacio">
-  <div class="card">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img
-          src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1974&q=80"
-          class="img-fluid rounded-start"
-        />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <div class="container">
-            <button
-              id="back"
-              type="button"
-              class="btn btn-dark"
-              (click)="regresar()"
-            >
-              <i class="fa fa-home"> Regresar</i>
-            </button>
-            <form
-              [formGroup]="formUsuario"
-              class="row g-3"
-              (ngSubmit)="postform(formUsuario.value)"
-            >
-              <p class="estilo">Registrate</p>
-              <div class="col-md-4">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input
-                  placeholder="Nombre"
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  formControlName="nombre"
-                  oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase()"
-                />
-              </div>
+<div class="main_content">
+  <div class="main_content_bg">
+    <img src="../assets/images/content-bg.jpg" alt="">
+  </div>
+  <div class="espacio">
+    <div class="card">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1974&q=80"
+            class="img-fluid rounded-start"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="container">
+              <form
+                [formGroup]="formUsuario"
+                class="row g-3"
+                (ngSubmit)="postform(formUsuario.value)"
+              >
+                <p class="estilo">Registrate</p>
+                <div class="col-md-4">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input
+                    placeholder="Nombre"
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    formControlName="nombre"
+                  />
+                </div>
 
-              <div class="col-md-4">
-                <label for="correo" class="form-label">Correo</label>
-                <input
-                  placeholder="Correo"
-                  type="text"
-                  class="form-control"
-                  id="correo"
-                  formControlName="correo"
-                />
-              </div>
+                <div class="col-md-4">
+                  <label for="correo" class="form-label">Correo</label>
+                  <input
+                    placeholder="Correo"
+                    type="text"
+                    class="form-control"
+                    id="correo"
+                    formControlName="correo"
+                  />
+                </div>
 
-              <div class="col-md-4">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input
-                  placeholder="Teléfono"
-                  class="form-control"
-                  id="telefono"
-                  formControlName="telefono"
-                />
-              </div>
+                <div class="col-md-4">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input
+                    placeholder="Teléfono"
+                    type="number"
+                    class="form-control"
+                    id="telefono"
+                    formControlName="telefono"
+                  />
+                </div>
 
-              <div class="col-md-4">
-                <label for="nickname" class="form-label"
-                  >Nombre de Usuario</label
-                >
-                <input
-                  placeholder="Nombre de Usuario"
-                  type="text"
-                  class="form-control"
-                  id="nickname"
-                  formControlName="nickname"
-                />
-              </div>
+                <div class="col-md-4">
+                  <label for="nickname" class="form-label"
+                    >Nombre de Usuario</label
+                  >
+                  <input
+                    placeholder="Nombre de Usuario"
+                    type="text"
+                    class="form-control"
+                    id="nickname"
+                    formControlName="nickname"
+                  />
+                </div>
 
-              <div class="d-grid gap-2 d-md-block estilos">
-                <button type="submit" class="btn btn-success register">
-                  Registrar
-                </button>
-                <button class="btn btn-secondary" type="reset">
-                  Limpiar Formulario
-                </button>
-              </div>
-            </form>
+                <div class="d-grid gap-2 d-md-block estilos">
+                  <button type="submit" class="btn btn-success register">
+                    Registrar
+                  </button>
+                  <button class="btn btn-secondary" type="reset">
+                    Limpiar Formulario
+                  </button>
+
+                  <button
+                    id="back"
+                    type="button"
+                    class="btn btn-dark"
+                    (click)="regresar()"
+                  >
+                    <i class="fa fa-home"><p class="b1t">Regresar</p></i>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  </div>

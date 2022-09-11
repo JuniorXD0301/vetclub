@@ -26,11 +26,11 @@ export class ListarMascotasComponent implements OnInit {
   }
 
   nuevaMascota(){
-    this.router.navigate(['mascota'])
+    this.router.navigate(['mascotas/mascota'])
   }
 
   editarMascota(id_mascota: any){
-    this.router.navigate(['editarMascota', id_mascota])
+    this.router.navigate(['mascotas/editarMascota', id_mascota])
   }
 
   eliminar(id_mascota: any){
@@ -39,5 +39,9 @@ export class ListarMascotasComponent implements OnInit {
       console.log(resultado)
       alert("Persona eliminada satisfactoriamente")
     })
+  }
+
+  regresar(){
+    this.router.navigate(['admin']);
   }
 }

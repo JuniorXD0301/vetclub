@@ -1,0 +1,105 @@
+<div class="main_content">
+  <div class="main_content_bg">
+    <img src="../assets/images/content-bg.jpg" alt="">
+  </div>
+<div class="espacio">
+  <div class="card">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          id="imagen"
+          src="https://i.pinimg.com/736x/10/1b/be/101bbe25a7fabf68e7e95be52f641815.jpg"
+          class="img-fluid rounded-start"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <div class="container">
+            <form
+              [formGroup]="editarMascota"
+              class="row g-3"
+              (ngSubmit)="putform(editarMascota.value)"
+            >
+              <p class="estilo">Editar a tu Mascota</p>
+              <div class="col-md-4">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  placeholder="Nombre"
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  formControlName="nombre"
+                />
+              </div>
+
+              <div class="col-md-4">
+                <label for="tipo_mascota" class="form-label"
+                  >Tipo de mascota</label
+                >
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  type="text"
+                  id="tipo_mascota"
+                  formControlName="tipo_mascota"
+                >
+                  <option value="" disabled selected>
+                    Seleccione una opción
+                  </option>
+                  <option value="1">Perro</option>
+                  <option value="2">Gato</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label for="raza" class="form-label">Raza</label>
+                <input
+                  placeholder="Raza"
+                  type="text"
+                  class="form-control"
+                  id="raza"
+                  formControlName="raza"
+                />
+              </div>
+
+              <div>
+                <label for="historial" class="form-label" rows="3"
+                  >Historial</label
+                >
+                <textarea
+                  placeholder="Escriba aquí el historial de su mascota"
+                  type="text"
+                  class="form-control"
+                  id="historial"
+                  formControlName="historial"
+                  maxlength="400"
+                ></textarea>
+                <small class="form-text text-muted"
+                  >Máximo 400 caracteres</small
+                >
+              </div>
+
+              <div class="d-grid gap-2 d-md-block estilos">
+                <button type="submit" class="btn btn-success register">
+                  Actualizar
+                </button>
+                <button class="btn btn-secondary" type="reset">
+                  Limpiar Formulario
+                </button>
+                <button
+                    id="back"
+                    type="button"
+                    class="btn btn-dark"
+                    (click)="regresar()"
+                  >
+                    <i class="fa fa-home"><p class="b1t">Regresar</p></i>
+                  </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

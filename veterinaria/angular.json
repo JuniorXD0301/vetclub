@@ -29,7 +29,19 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/jquery/dist/jquery.min.js",
+              "../node_modules/popper.js/dist/umd/popper.min.js",
+              "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "../veterinaria/src/assets/vendor/purecounter/purecounter_vanilla.js",
+              "../veterinaria/src/assets/vendor/aos/aos.js",
+              "../veterinaria/src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "../veterinaria/src/assets/vendor/glightbox/js/glightbox.min.js",
+              "../veterinaria/src/assets/js/main.js",
+              "../veterinaria/src/js/bootstrap.js",
+              "../veterinaria/src/js/custom.js",
+              "../veterinaria/src/js/jquery-3.4.1.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,13 +106,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
             "scripts": [
               "../node_modules/jquery/dist/jquery.min.js",
               "../node_modules/popper.js/dist/umd/popper.min.js",
-              "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "../veterinaria/src/assets/vendor/purecounter/purecounter_vanilla.js",
+              "../veterinaria/src/assets/vendor/aos/aos.js",
+              "../veterinaria/src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "../veterinaria/src/assets/vendor/glightbox/js/glightbox.min.js",
+              "../veterinaria/src/assets/js/main.js",
+              "../veterinaria/src/js/bootstrap.js",
+              "../veterinaria/src/js/custom.js",
+              "../veterinaria/src/js/jquery-3.4.1.min.js"
             ]
           }
         }

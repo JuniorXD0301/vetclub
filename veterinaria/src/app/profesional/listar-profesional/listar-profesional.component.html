@@ -1,46 +1,59 @@
-<div class="espacio">
-  <div class="container">
-    <div class="row">
-      <div class="card card1">
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <th>#</th>
-                <th>Tipo Profesional</th>
-                <th>Nombre</th>
-                <th>Correo</th>
-                <th>Nickname</th>
-                <th>Editar</th>
-                <th>Borrar</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let pro of profesional">
-                  <td>{{ pro.id_profesional }}</td>
-                  <td>{{ pro.tipo_profesional }}</td>
-                  <td>{{ pro.nombre }}</td>
-                  <td>{{ pro.correo }}</td>
-                  <td>{{ pro.nickname }}</td>
-                  <td><a class="btn btn-warning">Editar</a></td>
-                  <td>
-                    <button
-                      (click)="eliminarPro(pro.id_profesional)"
-                      class="btn btn-danger"
-                    >
-                      Borrar
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+<div class="main_content">
+  <div class="main_content_bg">
+    <img src="../assets/images/content-bg.jpg" alt="">
+  </div>
+  <div class="espacio">
+    <div class="container">
+      <div class="row">
+        <div class="card card1">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <th>#</th>
+                  <th>Tipo Profesional</th>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                  <th>Nickname</th>
+                  <th>Editar</th>
+                  <th>Borrar</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pro of profesional">
+                    <td>{{ pro.id_profesional }}</td>
+                    <td>{{ pro.tipo_profesional }}</td>
+                    <td>{{ pro.nombre }}</td>
+                    <td>{{ pro.correo }}</td>
+                    <td>{{ pro.nickname }}</td>
+                    <td><button (click)="editarProfesional(pro.id_profesional)" class="btn btn-warning">Editar</button></td>
+                    <td>
+                      <button
+                        (click)="eliminarPro(pro.id_profesional)"
+                        class="btn btn-danger"
+                      >
+                        Borrar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button
+              type="submit"
+              (click)="nuevoProfesional()"
+              class="btn btn-success salto"
+            >
+              Nuevo Profesional
+            </button>
+            <button
+                    id="back"
+                    type="button"
+                    class="btn btn-dark salto"
+                    (click)="regresar()"
+                  >
+                    Regresar
+            </button>
           </div>
-          <button
-            type="submit"
-            (click)="nuevoProfesional()"
-            class="btn btn-success salto"
-          >
-            Nuevo Profesional
-          </button>
         </div>
       </div>
     </div>

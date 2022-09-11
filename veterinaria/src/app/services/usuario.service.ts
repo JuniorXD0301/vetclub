@@ -17,9 +17,25 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.url);
   }
 
+  //metodo para llamar un solo usuario
+  extraerUsuario(id:any):Observable<Usuario>{
+    let ruta1 = this.url+'/'+id;
+    return this.http.get<Usuario>(ruta1)
+  }
+
+  //poner informacion de un solo usuario
+  putUsuario(form:Usuario, id:any):Observable<Usuario>{
+    let ruta2 = this.url+'/'+id;
+    return this.http.put<Usuario>(ruta2, form)
+  }
+
   //metodo para agregar usuario
   agregarUser(form: Usuario):Observable<Usuario>{
     return this.http.post<Usuario>(this.url,form)
+  }
+
+  editar(usuario: string): Observable<any>{
+    return this.http.put(`${this.url}/usuario`, JSON.stringify(usuario));
   }
 
   //metodo para eliminar un usuario

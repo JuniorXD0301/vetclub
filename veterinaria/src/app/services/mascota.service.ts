@@ -17,15 +17,21 @@ export class MascotaService {
     return this.http.get<mostrarMascota[]>(this.url);
   }
 
+  extraerMascota(id_mascota:any):Observable<mostrarMascota>{
+    let ruta1 = this.url+'/'+id_mascota;
+    return this.http.get<mostrarMascota>(ruta1)
+  }
+
+  //poner informacion de la mascota
+  putMascota(form:mostrarMascota, id:any):Observable<mostrarMascota>{
+    let ruta2 = this.url+'/'+id;
+    return this.http.put<mostrarMascota>(ruta2, form)
+  }
+
   //metodo para agregar una nueva mascota
   agregarMasco(form:mostrarMascota):Observable<mostrarMascota>{
     return this.http.post<mostrarMascota>(this.url,form)
   } 
-
-  extraerMasco(id_mascota:any):Observable<mostrarMascota>{
-    let ruta1 = this.url+'/'+id_mascota;
-    return this.http.get<mostrarMascota>(ruta1)
-  }
 
   //metodo para eliminar una mascota
   eliminarMasco(id_mascota:number):Observable<mostrarMascota>{

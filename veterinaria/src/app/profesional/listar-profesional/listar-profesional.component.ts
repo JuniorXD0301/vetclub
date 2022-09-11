@@ -30,7 +30,7 @@ export class ListarProfesionalComponent implements OnInit {
   }
 
   editarProfesional(id_profesional: any){
-    this.router.navigate(['editarProfesional', id_profesional])
+    this.router.navigate(['profesionales/editarProfesional', id_profesional])
   }
 
   eliminarPro(id_profesional: any){
@@ -39,5 +39,9 @@ export class ListarProfesionalComponent implements OnInit {
       console.log(fin)
       alert("Usuario eliminado correctamente")
     })
+  }
+
+  regresar(){
+    this.router.navigate(['admin'])
   }
 }

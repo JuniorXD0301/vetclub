@@ -1,0 +1,71 @@
+<div class="main_content">
+  <div class="main_content_bg">
+    <img src="../assets/images/content-bg.jpg" alt="">
+  </div>
+  <div class="espacio">
+    <div class="container">
+      <div class="row">
+        <div class="card card1">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <th>#</th>
+                  <th>Tipo_proceso</th>
+                  <th>Profesional</th>
+                  <th>Nickname</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Editar</th>
+                  <th>Borrar</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let ci of cita">
+                    <td>{{ ci.id_cita }}</td>
+                    <td>{{ ci.tipo_proceso }}</td>
+                    <td>{{ ci.profesional }}</td>
+                    <td>{{ ci.nickname }}</td>
+                    <td>{{ ci.fecha }}</td>
+                    <td>{{ ci.hora }}</td>
+                    <td><button (click)="editarCita(ci.id_cita)" class="btn btn-warning">Editar</button></td>
+                    <td>
+                      <button aling="center"
+                        (click)="eliminarCita(ci.id_cita)"
+                        class="btn btn-danger"
+                      >
+                        Borrar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button
+              type="submit"
+              (click)="nuevaCita()"
+              class="btn btn-success salto"
+            >
+              Nueva Cita Veterinario
+            </button>
+            <button
+              type="submit"
+              (click)="nuevaCitaStyle()"
+              class="btn btn-success salto"
+            >
+              Nueva Cita Estilista
+            </button>
+            <button
+                    id="back"
+                    type="button"
+                    class="btn btn-dark salto"
+                    (click)="regresar()"
+                  >
+                    Regresar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,3 +1,7 @@
+<div class="main_content">
+  <div class="main_content_bg">
+    <img src="../assets/images/content-bg.jpg" alt="">
+  </div>
 <div class="espacio">
   <div class="card">
     <div class="row g-0">
@@ -11,9 +15,6 @@
       <div class="col-md-8">
         <div class="card-body">
           <div class="container">
-            <button id="back" type="button" class="btn btn-dark" (click)="regresar()">
-              <i class="fa fa-home"> Regresar</i>
-            </button>
             <form
               [formGroup]="formMascota"
               class="row g-3"
@@ -28,7 +29,6 @@
                   class="form-control"
                   id="nombre"
                   formControlName="nombre"
-                  oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase()"
                 />
               </div>
 
@@ -59,7 +59,6 @@
                   class="form-control"
                   id="raza"
                   formControlName="raza"
-                  oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase()"
                 />
               </div>
 
@@ -87,6 +86,14 @@
                 <button class="btn btn-secondary" type="reset">
                   Limpiar Formulario
                 </button>
+                <button
+                    id="back"
+                    type="button"
+                    class="btn btn-dark"
+                    (click)="regresar()"
+                  >
+                    <i class="fa fa-home"><p class="b1t">Regresar</p></i>
+                  </button>
               </div>
             </form>
           </div>
@@ -94,4 +101,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -1,3 +1,7 @@
+<div class="main_content">
+  <div class="main_content_bg">
+    <img src="../assets/images/content-bg.jpg" alt="">
+  </div>
 <div class="espacio">
   <div class="container">
     <div class="row">
@@ -21,7 +25,7 @@
                   <td>{{ mas.tipo_mascota }}</td>
                   <td>{{ mas.raza }}</td>
                   <td>{{ mas.historial }}</td>
-                  <td><button class="btn btn-success">Editar</button></td>
+                  <td><button (click)="editarMascota(mas.id_mascota)" class="btn btn-warning">Editar</button></td>
                   <td>
                     <button
                       (click)="eliminar(mas.id_mascota)"
@@ -41,8 +45,17 @@
           >
             Nueva Mascota
           </button>
+          <button
+                    id="back"
+                    type="button"
+                    class="btn btn-dark salto"
+                    (click)="regresar()"
+                  >
+                    Regresar
+            </button>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>

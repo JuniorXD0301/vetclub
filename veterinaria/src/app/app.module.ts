@@ -12,6 +12,16 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
 import { CrearProfesionalComponent } from './profesional/crear-profesional/crear-profesional.component';
 import { ListarProfesionalComponent } from './profesional/listar-profesional/listar-profesional.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IndexComponent } from './principal/index/index.component';
+import { TiendaComponent } from './principal/tienda/tienda.component';
+import { CitaComponent } from './agenda/cita/cita.component';
+import { ProgramadaComponent } from './agenda/programada/programada.component';
+import { CitaStyleComponent } from './agenda/cita-style/cita-style.component';
+import { AdminComponent } from './principal/admin/admin.component';
+import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.component';
+import { EditarProfesionalComponent } from './profesional/editar-profesional/editar-profesional.component';
+import { EditarMascotaComponent } from './todo_mascota/editar-mascota/editar-mascota.component';
+import { EditarProgramadaComponent } from './agenda/editar-programada/editar-programada.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +31,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CrearUsuarioComponent,
     ListarUsuarioComponent,
     CrearProfesionalComponent,
-    ListarProfesionalComponent
+    ListarProfesionalComponent,
+    IndexComponent,
+    TiendaComponent,
+    CitaComponent,
+    ProgramadaComponent,
+    CitaStyleComponent,
+    AdminComponent,
+    EditarUsuarioComponent,
+    EditarProfesionalComponent,
+    EditarMascotaComponent,
+    EditarProgramadaComponent
   ],
   imports: [
     BrowserModule,

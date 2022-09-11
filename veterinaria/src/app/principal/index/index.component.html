@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+
+  <title>VetClub</title>
+
+  <!-- bootstrap core css -->
+  <link type="text/css" href="../css/bootstrap.css" />
+  <!-- slider stylesheet -->
+  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" />
+  <!-- responsive style -->
+  <link href="../css/responsive.css" />
+</head>
+
+<body>
+  <div class="hero_area ">
+    <div class="hero_bg_box">
+      <img src="../assets/images/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section" id="inicioP">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="">
+            <span>
+              VetClub
+            </span>
+          </a>
+          <div class="" id="">
+            
+            <div class="User_option">
+              <a class="espacio" href="http://localhost:4200/#servicios">Servicios</a>
+              <a class="espacio" href="http://localhost:4200/#info">Informacion</a>
+              <a class="espacio" href="http://localhost:4200/#team">Equipo</a>
+              <a class="espacio" href="http://localhost:4200/#help">Ayuda</a>
+            </div>
+
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a class="cliqueame" href="index.html">Home</a>
+                <a class="cliqueame" (click)="admin()">Admin</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <!-- slider section -->
+    <section class="slider_section" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="detail-box">
+              <h1>
+                Un aliado de tu mascota.
+              </h1>
+              <p>
+                Vetclub nace tras la necesidad de brindar una atención especializada a nuestras mascotas ya que muchas veces estas no reciben los cuidados necesarios en el momento que lo más necesitan.
+                Por medio del software VetClub esperamos brindar una asistencia integral, óptima y responsable, con el objetivo de facilitar la vida de los clientes al agendar su cita sin salir de casa, evitando filas y con un seguimiento detallado de acuerdo a la atención brindada.
+              </p>
+              <a href="http://localhost:4200/#info">
+                Leer más
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <div class="main_content">
+    <div class="main_content_bg">
+      <img src="../assets/images/content-bg.jpg" alt="">
+    </div>
+
+    <!-- service section -->
+
+    <section class="service_section layout_padding" id="servicios">
+      <div class="container py_mobile_45">
+        <div class="heading_container heading_center">
+          <h2> Nuestros servicios </h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="box " (click)="estilismo()">
+              <div class="img-box sevice">
+                <img src="../assets/images/s1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Estilismo
+                </h5>
+                <p>
+                  Contamos con personal especializado para realizar los servicios estéticos, suministrando el mejor servicio para tu peludito.
+                  Procesos como baño y corte de pelo, masaje relajante, limpieza dental, recorte de uñas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box " (click)="veterinario()">
+              <div class="img-box">
+                <img src="../assets/images/s2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Veterinario
+                </h5>
+                <p>
+                  Atencion especializada para cuando su mascota se encuentre enferma, podrás agendar tus citas médicas en el horario y con el profesional que desees.
+                  Además de otros servicios como vacunaciones y examénes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box " (click)="tienda()">
+              <div class="img-box">
+                <img src="../assets/images/shop5.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Tienda
+                </h5>
+                <p>
+                  Consigue los mejores productos para tus mascotas a una excelente calidad y precio. En un inveterio con una gran variedad de utencilios que pueden facilitar tu vida y la de tu mascota.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            Read More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- end service section -->
+
+    <!-- about section -->
+
+    <section class="about_section " id="info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="../assets/images/about-img.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  ¿Por qué escogernos?
+                </h2>
+              </div>
+              <p>
+                <li>Por nuestra experiencia, somos una veterinaria con mas de 20 años en el area.</li>
+                <li>Estamos en constante actualización de medios para ofrecer la mejor Medicina Veterinaria General</li>
+                <li>Encontraremos disponibilidad en nuestro horario para adaptarnos al suyo.</li>
+                <li>Cualquier duda sobre las citas, diagnósticos, calendarios, se la solucionaremos en el menor tiempo posible.</li>
+              </p>
+              <a href="http://localhost:4200/#inicioP">
+                Leer Más
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end about section -->
+
+    <!-- care section -->
+
+    <section class="care_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  El mejor cuidado para tus mascotas
+                </h2>
+              </div>
+              <p>
+                <li>No se sentirá solo, siempre tendra un especialista disponible para atender a su mascota en todo lo que haga falta.</li>
+                <li>Atendemos a cada mascota como si fuera nuestra. Esta es la mejor forma de poner toda la atención a disposicion del cliente.</li>
+                <li>Porqué entendemos que su mascota es única, ninguna otra es igual, y le atenderemos con eso en mente.</li>
+              </p>
+              <a href="http://localhost:4200/#servicios">
+                Reseva Ahora
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="../assets/images/care.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end care section -->
+
+    <!-- client section -->
+    <section class="client_section">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Testimonios
+          </h2>
+        </div>
+        <div class="carousel-wrap ">
+          <div class="owl-carousel">
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="../assets/images/c1.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Laura Mantilla <br>
+                    <span>
+                      Propietario de unas Mascotas
+                    </span>
+                  </h5>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  <p>
+                    Me encanta como tratan a los animales. Hay mucho cariño. Ya llevé a mis dos gatos hace años. Ahora tengo de nuevo a otros dos y aunque vivo más lejos, he decidido traerlos a esta clínica. Vale la pena. Me siento segura y además son muy justas en el precio!!!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="../assets/images/c2.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Felipe Martinez <br>
+                    <span>
+                      Propietario de unas Mascotas
+                    </span>
+                  </h5>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  <p>
+                    Muy buenos profesionales, se nota que tienen mucha experiencia, y de precio genial. El trato que tienen con los animales es perfecto, les tratan con mucho cariño y cuidado. Lo recomiendo 100%!!!.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end client section -->
+
+    <!-- ======= Team Section ======= -->
+    <section class="team_section" id="team">
+
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Equipo
+          </h2>
+        </div>
+
+        <p class="desc">Nuestro laborioso equipo de trajo</p>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="member-img">
+                <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Camila Ardila</h4>
+                <span>Veterinaria</span>
+                <p>Enfocada en los procesos basicos de veterinaria para las mascotas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="member-img">
+                <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <div *ngFor="let pro of profesional">
+                  <h2>{{ pro.nombre }}</h2>
+                  <h4>Veterinario</h4>
+                  <span>{{ pro.correo }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="member-img">
+                <img src="../assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+                <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="member">
+              <div class="member-img">
+                <img src="../assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+                <p>Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque ut possimus ipsum officia.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- End Team Section -->
+
+    <!-- contact section -->
+
+    <section class="contact_section layout_padding" id="help">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Solicitar Ayuda
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form_container">
+              <form action="#">
+                <div>
+                  <input type="text" placeholder="Nombre Completo " />
+                </div>
+                <div>
+                  <input type="email" placeholder="Email" />
+                </div>
+                <div>
+                  <input type="text" placeholder="Télefono" />
+                </div>
+                <div>
+                  <input type="text" class="message-box" placeholder="Mensaje" />
+                </div>
+                <div class="d-flex ">
+                  <button>
+                    SEND
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="map_container">
+              <div class="map">
+                <div id="googleMap"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end contact section -->
+  </div>
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="info_container ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 ">
+            <h6>
+              About
+            </h6>
+            <p>
+              Se presentan diversas caracteristicas para los usuarios, las cuales permiten tener un amplia gama de servicios y productos a su disposición directamente en la web. 
+              Haciendo los trámites y las asignaciones de citas más sencillas y versátiles, buscando siempre mejorar el producto final de nuestros clientes</p>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <h6>
+              Useful Link
+            </h6>
+            <div class="info_link-box">
+              <ul>
+                <li class="active">
+                  <a href="http://localhost:4200/#inicioP">
+                    Principal
+                  </a>
+                </li>
+                <li>
+                  <a href="http://localhost:4200/#servicios">
+                    Servicios
+                  </a>
+                </li>
+                <li>
+                  <a href="http://localhost:4200/#info">
+                    Información
+                  </a>
+                </li>
+                <li>
+                  <a href="http://localhost:4200/#team">
+                    Equipo
+                  </a>
+                </li>
+                <li>
+                  <a href="http://localhost:4200/#help">
+                    Ayuda
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <h6>
+              Address
+            </h6>
+            <div class="contact_items">
+              <a href="">
+                <div class="item ">
+                  <div class="img-box ">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  </div>
+                  <div class="detail-box">
+                    <p>
+                      Location
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="item ">
+                  <div class="img-box ">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                  </div>
+                  <div class="detail-box">
+                    <p>
+                      Call +01 1234567890
+                    </p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="item ">
+                  <div class="img-box ">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </div>
+                  <div class="detail-box">
+                    <p>
+                      demo@gmail.com
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 ">
+            <div class="info_form ">
+              <h5>
+                Newsletter
+              </h5>
+              <form action="#">
+                <input type="email" placeholder="Enter your email">
+                <button>
+                  Subscribe
+                </button>
+              </form>
+              <div class="social_box">
+                <a href="">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                  <i class="fa fa-youtube" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- end info section -->
+
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <!-- End Google Map -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="../js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+
+</body>
+
+</html>

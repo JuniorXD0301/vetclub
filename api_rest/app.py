@@ -1,5 +1,6 @@
 from crypt import methods
-from dataclasses import field
+from dataclasses import field, fields
+from enum import unique
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -68,7 +69,7 @@ class profesional(db.Model):
 class tipo_profesional(db.Model):
     id_tipoProfesional = db.Column(db.Integer,primary_key=True,unique=True,autoincrement=True)
     profesion = db.Column(db.String(20))
-    descripcion = db.Column(db.String(50))
+    descripcion = db.Column(db.String(100))
 
     #constructor tipo_profesional
     def __init__(self,profesion,descripcion):
@@ -103,17 +104,17 @@ class tipo_mascota(db.Model):
 class cita(db.Model):
     id_cita = db.Column(db.Integer,primary_key=True,unique=True,autoincrement=True)
     profesional = db.Column(db.ForeignKey('profesional.id_profesional'))
-    mascota = db.Column(db.ForeignKey('mascota.id_mascota'))
-    usuario = db.Column(db.ForeignKey('usuario.id_usuario'))
+    tipo_mascota = db.Column(db.ForeignKey('tipo_mascota.id_tipoMascota'))
+    nickname = db.Column(db.String(60))
     tipo_proceso = db.Column(db.ForeignKey('tipo_proceso.id_tipoProceso'))
     fecha = db.Column(db.Date)
     hora = db.Column(db.Time)
 
     #constructor cita
-    def __init__(self,profesional,mascota,usuario,tipo_proceso,fecha,hora):
+    def __init__(self,profesional,mascota,nickname,tipo_proceso,fecha,hora):
         self.profesional = profesional
         self.mascota = mascota
-        self.usuario = usuario
+        self.nickname = nickname
         self.tipo_proceso = tipo_proceso
         self.fecha = fecha
         self.hora = hora
@@ -179,6 +180,14 @@ profesionalSchema = ProfesionalSchema()
 #multiples datos o respuestas apartir de la bd
 profesionalMultipleSchema = ProfesionalSchema(many = True)
 
+#creacion de esquema, para citas
+class CitaSchema(ma.Schema):
+    class Meta:
+        fields = ('id_cita', 'profesional', 'tipo_mascota', 'nickname', 'tipo_proceso', 'fecha', 'hora')
+#instanciar esquema
+citaSchema = CitaSchema()
+#multiples datos o respuestas apartir de la bd
+citaMultipleSchema = CitaSchema(many = True)
 
 #Endpoints de rest-api, Apartado de Mascotas
 #crear una mascota
@@ -413,22 +422,98 @@ def borrarPro(id_profesional):
     
     return profesionalSchema.jsonify(delPro)
 
-#Endpoints de rest-api, Apartado tipo Profesional
-"""Este lo escribi directamente en sql"""
+#Endpoints de rest-api, Apartado de Citas
+#crear una cita
+@app.route('/cita', methods=['POST'])
+def addCita():
+    #recibo y guardo los datos
+    profesional = request.json['profesional']
+    tipo_mascota = request.json['tipo_mascota']
+    nickname = request.json['nickname']
+    tipo_proceso = request.json['tipo_proceso']
+    fecha = request.json['fecha']
+    hora = request.json['hora']
+    #creo la cita
+    new_cita = cita(profesional, tipo_mascota, nickname, tipo_proceso, fecha, hora)
+    #guardo en bd
+    db.session.add(new_cita)
+    print(new_cita)
+    db.session.commit()
+    #respondemos con la info de creacion, de 1 sola tarea
+    return citaSchema.jsonify(new_cita)
+
+#get citas todas
+@app.route('/cita', methods=['GET'])
+def get_cita():
+    #consultar todo del modelo de mascota especifica
+    citas = cita.query.all()
+    #metodo dump para pasar datos de la consulta
+    ci = citaMultipleSchema.dump(citas)
+    return jsonify(ci)
+
+#get una sola cita
+@app.route('/cita/<id_cita>', methods=['GET'])
+def get_citaById(id_cita):
+    citaById = cita.query.get(id_cita)
+    return citaSchema.jsonify(citaById)
+
+#actualizar info de la cita
+@app.route('/cita/<id_cita>', methods=['PUT'])
+def actualizarCita(id_cita):
+    actualizar = cita.query.get(id_cita)
+    profesional = request.json['profesional']
+    tipo_mascota = request.json['tipo_mascota']
+    nickname = request.json['nickname']
+    tipo_proceso = request.json['tipo_proceso']
+    fecha = request.json['fecha']
+    hora = request.json['hora']
+    #update entre variables definidas a los datos
+    actualizar.profesional = profesional
+    actualizar.tipo_mascota = tipo_mascota
+    actualizar.nickname = nickname
+    actualizar.tipo_proceso = tipo_proceso
+    actualizar.fecha = fecha
+    actualizar.hora = hora
+    #update bd
+    db.session.commit()
+    #mostrar el update al usuario
+    return citaSchema.jsonify(actualizar)
+    
+#eliminar cita
+@app.route('/cita/<id_cita>', methods=['DELETE'])
+def borrarCita(id_cita):
+    delCita = cita.query.get(id_cita)
+    #borrar en bd
+    db.session.delete(delCita)
+    #update bd
+    db.session.commit()
+    
+    return citaSchema.jsonify(delCita)
 
 #inicializacion del programa app
 if __name__ == "__main__":
     app.run(debug=True)
 
+#Endpoints de rest-api, Apartado de tablas tipo
+"""Este apartado se realizo directamente en sql"""
 
-#agregar datos predeterminados por flask o por sql
+#Tambien se pueden agregar datos predeterminados por flask o por sql
 #  new_tipo = tipo_mascota(animal=1)
 #   guardo en bd
 #   db.session.add(new_tipo)
 #   print(new_tipo)
 #   db.session.commit()
 
-#insert into tipo_profesional values
-#(NULL,"Secretario","Encargado de la agenda, citas, inventario")
+"""
+insert into tipo_profesional values (NULL,"Veterinario","Encargado de los procedimientos principales");
+insert into tipo_profesional values (NULL,"Estilista","Encargado de la parte estetica para los animales");
+insert into tipo_profesional values (NULL,"Secretario","Encargado de la agenda, citas, inventario");
 
-    
+insert into tipo_mascota values (NULL,"perro");
+insert into tipo_mascota values (NULL,"gato");
+
+insert into tipo_proceso values (NULL,"Cita General", "Revision general del animal", 30.000);
+insert into tipo_proceso values (NULL,"Peluquear", "Peluquear al animal", 20.000);
+insert into tipo_proceso values (NULL,"Lavado", "Servicio de limpieza", 15.000);
+insert into tipo_proceso values (NULL,"Desparacitar", "Servicio de limpieza", 10.000);
+"""

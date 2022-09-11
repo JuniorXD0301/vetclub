@@ -1,0 +1,145 @@
+<div class="main_content">
+  <div class="main_content_bg">
+    <img src="../assets/images/content-bg.jpg" alt="">
+  </div>
+  <div class="espacio">
+    <div class="card">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hm-jersye-borlas-perro-1634738744.jpg?crop=0.998xw:0.836xh;0.00205xw,0.0781xh&resize=480:*"
+            class="img-fluid rounded-start"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="container">
+
+              <form
+                [formGroup]="editarCita"
+                class="row g-3"
+                (ngSubmit)="putform(editarCita.value)"
+              >
+                <p class="estilo">Agendar Cita</p>
+
+                <div class="col-md-4">
+                  <label for="tipo_proceso" class="form-label"
+                    >Seleccione Tipo de Proceso</label
+                  >
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    type="text"
+                    id="tipo_procesos"
+                    formControlName="tipo_proceso"
+                  >
+                    <option value="" disabled selected>
+                      Seleccione una opción
+                    </option>
+                    <option value="1">Cita General</option>
+                    <option value="2">Corte de Pelo</option>
+                    <option value="3">Baño</option>
+                    <option value="4">Vacunaciones</option>
+                    <option value="5">Masasje Relajante</option>
+                    <option value="6">Limpieza Dental</option>
+                    <option value="7">Test Serológicos</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="profesional" class="form-label"
+                    >Seleccione al Profesional</label
+                  >
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    type="text"
+                    id="profesional"
+                    formControlName="profesional"
+                  >
+                    <option value="" disabled selected>
+                      Seleccione una opción
+                    </option>
+                    <option value="1">Camila Ardila</option>
+                    <option value="2">Jose Ramirez</option>
+                    <option value="3">Carlos Navas</option>
+                    <option value="4">Ximena Rosales</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="tipo_mascota" class="form-label"
+                    >Seleccione tu mascota</label
+                  >
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    type="text"
+                    id="tipo_mascota"
+                    formControlName="tipo_mascota"
+                  >
+                    <option value="" disabled selected>
+                      Seleccione una opción
+                    </option>
+                    <option value="1">Perro</option>
+                    <option value="2">Gato</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="nickname" class="form-label">Nickname</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nickname"
+                    formControlName="nickname"
+                    placeholder="Nickname"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label for="fecha" class="form-label">Fecha</label>
+                  <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control" placeholder="AAAA-MM-DD" formControlName="fecha">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="hora" class="form-label">hora</label>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker3'>
+                          <input type='text' class="form-control" placeholder="HH:MM" formControlName="hora"/>
+                          <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-time"></span>
+                          </span>
+                        </div>
+                  </div>
+                </div>
+
+                <div class="d-grid gap-2 d-md-block estilos">
+                  <button type="submit" class="btn btn-success register">
+                    Actualizar
+                  </button>
+                  <button class="btn btn-secondary" type="reset">
+                    Limpiar Formulario
+                  </button>
+                  <button
+                    id="back"
+                    type="button"
+                    class="btn btn-dark"
+                    (click)="regresar()"
+                  >
+                    <i class="fa fa-home"><p class="b1t">Regresar</p></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

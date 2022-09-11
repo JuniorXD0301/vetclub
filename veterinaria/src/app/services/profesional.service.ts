@@ -17,6 +17,18 @@ export class ProfesionalService {
     return this.http.get<Profesional[]>(this.url)
   }
 
+  //metodo para llamar un solo usuario
+  extraerProfesional(id:any):Observable<Profesional>{
+    let ruta1 = this.url+'/'+id;
+    return this.http.get<Profesional>(ruta1)
+  }
+
+  //poner informacion de un solo usuario
+  putProfesional(form:Profesional, id:any):Observable<Profesional>{
+    let ruta2 = this.url+'/'+id;
+    return this.http.put<Profesional>(ruta2, form)
+  }
+
   agregarPro(form: Profesional):Observable<Profesional>{
     return this.http.post<Profesional>(this.url,form)
   }

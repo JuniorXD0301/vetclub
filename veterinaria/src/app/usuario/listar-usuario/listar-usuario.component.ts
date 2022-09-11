@@ -30,7 +30,7 @@ export class ListarUsuarioComponent implements OnInit {
   }
 
   editarUsuario(id_usuario: any){
-    this.router.navigate(['editarUsuario', id_usuario])
+    this.router.navigate(['usuarios/editarUsuario', id_usuario])
   }
 
   eliminarUser(id_usuario: any){
@@ -39,6 +39,10 @@ export class ListarUsuarioComponent implements OnInit {
       console.log(fin)
       alert("Usuario eliminado correctamente")
     })
+  }
+
+  regresar(){
+    this.router.navigate(['admin']);
   }
 
 }

@@ -27,13 +27,13 @@ export class MascotaComponent implements OnInit {
     this.mascota.agregarMasco(form).subscribe(info=>{
       alert('Se ha registrado con exito')
       console.log(info)
-      this.router.navigate(['']);
+      this.router.navigate(['/mascotas']);
     })
     
   }
 
   regresar(){
-    this.router.navigate(['']);
+    this.router.navigate(['/mascotas']);
   }
 
 }
