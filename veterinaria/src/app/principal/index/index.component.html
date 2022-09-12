@@ -42,7 +42,7 @@
             </span>
           </a>
           <div class="" id="">
-            
+
             <div class="User_option">
               <a class="espacio" href="http://localhost:4200/#servicios">Servicios</a>
               <a class="espacio" href="http://localhost:4200/#info">Informacion</a>
@@ -158,6 +158,7 @@
           <a href="">
             Read More
           </a>
+          <button class="btn"><i class="fa fa-home" (click)="scrollUp()"></i></button>
         </div>
       </div>
     </section>
@@ -215,8 +216,8 @@
                 <li>Atendemos a cada mascota como si fuera nuestra. Esta es la mejor forma de poner toda la atención a disposicion del cliente.</li>
                 <li>Porqué entendemos que su mascota es única, ninguna otra es igual, y le atenderemos con eso en mente.</li>
               </p>
-              <a href="http://localhost:4200/#servicios">
-                Reseva Ahora
+              <a href="http://localhost:4200/#/servicios">
+                Reserva Ahora
               </a>
             </div>
           </div>
@@ -238,6 +239,7 @@
           <h2>
             Testimonios
           </h2>
+          <button class="btn"><i class="fa fa-home" (click)="scrollUp()"></i></button>
         </div>
         <div class="carousel-wrap ">
           <div class="owl-carousel">
@@ -294,11 +296,23 @@
           <h2>
             Equipo
           </h2>
+          <button class="btn"><i class="fa fa-home" (click)="scrollUp()"></i></button>
         </div>
 
-        <p class="desc">Nuestro laborioso equipo de trajo</p>
-
-        <div class="row gy-4">
+        <p class="desc">Nuestro laborioso equipo de trabajo</p>
+        <div class="row">
+        <div class="col-md-4" *ngFor="let pro of profesional">
+          <div class="card" style="width: 18rem">
+            <img src="../assets/img/team/usuario.png " class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2 class="card-title">{{pro.nombre}}</h2>
+              <p class="card-text">{{pro.correo}}</p>
+              <a href="" class="btn btn-primary">Ver Perfil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- <div class="row gy-4">
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
@@ -372,7 +386,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
       </div>
 
@@ -387,6 +401,7 @@
           <h2>
             Solicitar Ayuda
           </h2>
+          <button class="btn"><i class="fa fa-home" (click)="scrollUp()"></i></button>
         </div>
         <div class="row">
           <div class="col-md-6">
@@ -437,7 +452,7 @@
               About
             </h6>
             <p>
-              Se presentan diversas caracteristicas para los usuarios, las cuales permiten tener un amplia gama de servicios y productos a su disposición directamente en la web. 
+              Se presentan diversas caracteristicas para los usuarios, las cuales permiten tener un amplia gama de servicios y productos a su disposición directamente en la web.
               Haciendo los trámites y las asignaciones de citas más sencillas y versátiles, buscando siempre mejorar el producto final de nuestros clientes</p>
           </div>
           <div class="col-md-6 col-lg-3 ">
@@ -552,7 +567,7 @@
     </div>
   </section>
 
-  
+
   <!-- end info section -->
 
   <script src="../js/jquery-3.4.1.min.js"></script>

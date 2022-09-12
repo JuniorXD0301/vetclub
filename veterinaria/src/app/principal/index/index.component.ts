@@ -18,6 +18,10 @@ export class IndexComponent implements OnInit {
     this.cargarProfesional()
   }
 
+  scrollUp(){
+    window.scrollTo(0,0);
+  }
+
   cargarProfesional(){
     this.profesionalService.obtenerProfesional().subscribe(datos=> {
       this.profesional = datos

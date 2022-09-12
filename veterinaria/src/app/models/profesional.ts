@@ -3,5 +3,6 @@ export interface Profesional{
     tipo_profesional : String;
     nombre : String;
     correo : String;
-    nickname : String
+    nickname : String;
+    image? : String;
 }

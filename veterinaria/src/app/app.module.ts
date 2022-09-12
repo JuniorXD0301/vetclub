@@ -22,6 +22,10 @@ import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.
 import { EditarProfesionalComponent } from './profesional/editar-profesional/editar-profesional.component';
 import { EditarMascotaComponent } from './todo_mascota/editar-mascota/editar-mascota.component';
 import { EditarProgramadaComponent } from './agenda/editar-programada/editar-programada.component';
+import {MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -50,9 +54,12 @@ import { EditarProgramadaComponent } from './agenda/editar-programada/editar-pro
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgbModule
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [MatDatepickerModule, MatNativeDateModule ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
